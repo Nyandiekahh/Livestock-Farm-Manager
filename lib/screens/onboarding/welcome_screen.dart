@@ -13,7 +13,7 @@ class WelcomeScreen extends StatelessWidget {
           gradient: AppTheme.primaryGradient,
         ),
         child: SafeArea(
-          child: Padding(
+          child: SingleChildScrollView(
             padding: const EdgeInsets.all(24.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,48 +67,41 @@ class WelcomeScreen extends StatelessWidget {
 
                 const SizedBox(height: 30),
 
-                // Features List
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      _buildFeatureItem(
-                        Icons.pets,
-                        'Manage Your Livestock',
-                        'Track individual cows, chickens, and their health records',
-                      ),
-                      const SizedBox(height: 20),
-                      _buildFeatureItem(
-                        Icons.water_drop,
-                        'Track Milk Production',
-                        'Record daily milking sessions with detailed analytics',
-                      ),
-                      const SizedBox(height: 20),
-                      _buildFeatureItem(
-                        Icons.egg,
-                        'Monitor Egg Production',
-                        'Keep track of daily egg collection from chicken groups',
-                      ),
-                      const SizedBox(height: 20),
-                      _buildFeatureItem(
-                        Icons.grass,
-                        'Feeding Management',
-                        'Record feed consumption, costs, and optimize nutrition',
-                      ),
-                      const SizedBox(height: 20),
-                      _buildFeatureItem(
-                        Icons.medical_services,
-                        'Health Monitoring',
-                        'Track vaccinations, treatments, and health status',
-                      ),
-                      const SizedBox(height: 20),
-                      _buildFeatureItem(
-                        Icons.analytics,
-                        'Farm Analytics',
-                        'Get insights on productivity, costs, and trends',
-                      ),
-                    ],
-                  ),
+                // Features List - NO MORE Flexible widget!
+                _buildFeatureItem(
+                  Icons.pets,
+                  'Manage Your Livestock',
+                  'Track individual cows, chickens, and their health records',
+                ),
+                const SizedBox(height: 16),
+                _buildFeatureItem(
+                  Icons.water_drop,
+                  'Track Milk Production',
+                  'Record daily milking sessions with detailed analytics',
+                ),
+                const SizedBox(height: 16),
+                _buildFeatureItem(
+                  Icons.egg,
+                  'Monitor Egg Production',
+                  'Keep track of daily egg collection from chicken groups',
+                ),
+                const SizedBox(height: 16),
+                _buildFeatureItem(
+                  Icons.grass,
+                  'Feeding Management',
+                  'Record feed consumption, costs, and optimize nutrition',
+                ),
+                const SizedBox(height: 16),
+                _buildFeatureItem(
+                  Icons.medical_services,
+                  'Health Monitoring',
+                  'Track vaccinations, treatments, and health status',
+                ),
+                const SizedBox(height: 16),
+                _buildFeatureItem(
+                  Icons.analytics,
+                  'Farm Analytics',
+                  'Get insights on productivity, costs, and trends',
                 ),
 
                 const SizedBox(height: 40),
@@ -157,6 +150,8 @@ class WelcomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+
+                const SizedBox(height: 40), // Extra bottom padding
               ],
             ),
           ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_core/firebase_core.dart'; // Temporarily disabled
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -11,13 +11,15 @@ import 'providers/auth_provider.dart';
 import 'screens/onboarding/welcome_screen.dart';
 import 'screens/main/main_screen.dart';
 import 'utils/theme.dart';
-import 'firebase_options.dart';
+// import 'firebase_options.dart'; // Temporarily disabled
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+
+  // Temporarily disable Firebase initialization
+  // await Firebase.initializeApp(
+  //   options: DefaultFirebaseOptions.currentPlatform,
+  // );
 
   runApp(const LivestockFarmApp());
 }
@@ -72,9 +74,10 @@ class _SplashScreenState extends State<SplashScreen> {
           );
         } else {
           // Load farm data and navigate to main screen
-          final farmProvider =
-              Provider.of<FarmProvider>(context, listen: false);
-          await farmProvider.loadFarmData();
+          // Temporarily disabled Firebase data loading
+          // final farmProvider =
+          //     Provider.of<FarmProvider>(context, listen: false);
+          // await farmProvider.loadFarmData();
 
           Navigator.pushReplacement(
             context,
